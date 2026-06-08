@@ -1,22 +1,5 @@
-from datetime import datetime
+# Root level wrapper for task_manager.validation
+# This allows imports from both root and package level
+from task_manager.validation import validate_task_title, validate_task_description, validate_due_date
 
-def validate_task_title(title):
-    if not isinstance(title, str):
-        return False
-    title = title.strip()
-    return bool(title) and len(title) <= 100
-    
-def validate_task_description(description):
-    if not isinstance(description, str):
-        return False
-    description = description.strip()
-    return bool(description) and len(description) <= 250
-    
-def validate_due_date(due_date):
-    if not isinstance(due_date, str):
-        return False
-    try:
-        datetime.strptime(due_date, "%Y-%m-%d")
-        return True
-    except ValueError:
-        return False
+__all__ = ["validate_task_title", "validate_task_description", "validate_due_date"]
