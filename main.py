@@ -1,5 +1,4 @@
-from task_utils import add_task, mark_task_as_complete, view_pending_tasks, calculate_progress
-from validation import validate_task_title, validate_task_description, validate_due_date# Define the main function
+from task_manager.task_utils import add_task, mark_task_as_complete, view_pending_tasks, calculate_progress, tasks
 def main():
     while True:
         print("Task Management System")
